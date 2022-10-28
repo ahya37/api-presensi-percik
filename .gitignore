@@ -1,0 +1,5 @@
+.env
+.httaccess
+.vendor/*
+.storage/*
+.public/storage/*
