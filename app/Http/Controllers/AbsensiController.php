@@ -62,10 +62,16 @@ class AbsensiController extends Controller
         return $absensi;
     }
 
-    public function AbsensiMultiSheet()
+    public function AbsensiMultiSheet(Request $request)
     {
-        $start =  request('start');
-        $end   = request('end');
+		$date =  $request->date;
+		
+		$expdate = explode('/', $date);
+		$start   = $expdate[0];
+		$end   = $expdate[1];
+		
+        // $start =  request('start');
+        // $end   = request('end');
 
         $pengguna = Pengguna::select('id','nik','name')
                     ->where('nik', '!=','')

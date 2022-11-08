@@ -21,6 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['as' => 'api.'], function () {
     Route::get('absensi', 'AbsensiController@reportAbsen'); 
     Route::get('absensi/{nik}/{date}', 'AbsensiController@getReportAbsenWhereDate');
-    Route::get('absensi/multi', 'AbsensiController@AbsensiMultiSheet'); 
+    Route::post('absensi/multi', 'AbsensiController@AbsensiMultiSheet');
 
 });
